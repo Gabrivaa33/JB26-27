@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<style>
+  .title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  color: #191970;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simbología y sistema de puntuación</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="title">Simbología y sistema de puntuación</h1>
+
+    <!-- Simbología -->
+    <section class="mb-10 text-center">
+      <h2 class="text-2xl font-semibold mb-4">Simbología</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-4 bg-white rounded-2xl shadow text-center">🟨<br><span class="text-sm">Amarilla</span></div>
+        <div class="p-4 bg-white rounded-2xl shadow text-center">↪️<br><span class="text-sm">Sale</span></div>
+        <div class="p-4 bg-white rounded-2xl shadow text-center">↩️<br><span class="text-sm">Entra</span></div>
+        <div class="p-4 bg-white rounded-2xl shadow text-center">⚽<br><span class="text-sm">Gol</span></div>
+        <div class="p-4 bg-white rounded-2xl shadow text-center">⚽🅿️<br><span class="text-sm">Gol penalti</span></div>
+        <div class="p-4 bg-white rounded-2xl shadow text-center">🔴🅿️<br><span class="text-sm">Penalti fallado</span></div>
+        <div class="p-4 bg-white rounded-2xl shadow text-center">🅰️<br><span class="text-sm">Asistencia</span></div>
+        <div class="p-4 bg-white rounded-2xl shadow text-center">🧤<br><span class="text-sm">Penalti parado</span></div>
+        <div class="p-4 bg-white rounded-2xl shadow text-center">🔴<br><span class="text-sm">Autogol</span></div>
+        <div class="p-4 bg-white rounded-2xl shadow text-center">🟥<br><span class="text-sm">Roja</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sistema de puntuación -->
+    <section class="mb-10 text-center">
+      <h2 class="text-2xl font-semibold mb-4">Sistema de puntuación</h2>
+      <h3 class="text-xl font-medium mb-2">Valoración del partido</h3>
+      <p class="text-gray-600 mb-4">Cada jugador comienza con <b>6.5</b> y se ajusta según sus acciones.</p>
+
+      <table class="w-full border border-gray-200 rounded-xl overflow-hidden shadow text-sm text-center">
+        <thead class="bg-blue-100">
+          <tr>
+            <th class="p-2">Rango</th>
+            <th class="p-2">Puntos</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <tr><td class="p-2">9.3 – 10</td><td class="p-2">12</td></tr>
+          <tr><td class="p-2">8.6 – 9.2</td><td class="p-2">11</td></tr>
+          <tr><td class="p-2">8.0 – 8.5</td><td class="p-2">10</td></tr>
+          <tr><td class="p-2">7.8 – 7.9</td><td class="p-2">9</td></tr>
+          <tr><td class="p-2">7.6 – 7.7</td><td class="p-2">8</td></tr>
+          <tr><td class="p-2">7.4 – 7.5</td><td class="p-2">7</td></tr>
+          <tr><td class="p-2">7.2 – 7.3</td><td class="p-2">6</td></tr>
+          <tr><td class="p-2">7.0 – 7.1</td><td class="p-2">5</td></tr>
+          <tr><td class="p-2">6.8 – 6.9</td><td class="p-2">4</td></tr>
+          <tr><td class="p-2">6.6 – 6.7</td><td class="p-2">3</td></tr>
+          <tr><td class="p-2">6.4 – 6.5</td><td class="p-2">2</td></tr>
+          <tr><td class="p-2">6.2 – 6.3</td><td class="p-2">1</td></tr>
+          <tr><td class="p-2">6.0 – 6.1</td><td class="p-2">0</td></tr>
+          <tr><td class="p-2">5.8 – 5.9</td><td class="p-2">-1</td></tr>
+          <tr><td class="p-2">5.4 – 5.7</td><td class="p-2">-2</td></tr>
+          <tr><td class="p-2">5.0 – 5.3</td><td class="p-2">-3</td></tr>
+          <tr><td class="p-2">3.0 – 4.9</td><td class="p-2">-4</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="text-xl font-medium mt-6 mb-2 text-center">Bonificaciones y penalizaciones</h3>
+      <ul class="list-disc pl-6 text-left md:inline-block md:text-left space-y-1">
+        <li>Asistencia → +1</li>
+        <li>Gol PT → +6</li>
+        <li>Gol DF → +5</li>
+        <li>Gol MC → +4</li>
+        <li>Gol DL → +3</li>
+        <li>Gol Penalti → +3</li>
+        <li>2ª Amarilla → -3</li>
+        <li>Roja → -6</li>
+      </ul>
+    </section>
+  
+    <!-- Métricas más premiadas -->
+    <section class="mb-10 text-center">
+        <h2 class="text-2xl font-semibold mb-4">Métricas más premiadas por posición</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full border border-gray-200 rounded-xl overflow-hidden shadow text-sm text-center">
+                <thead class="bg-blue-100">
+                <tr><th class="p-3">Posición</th><th class="p-3">Acciones más premiadas</th><th class="p-3">Acciones más perjudiciales</th></tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                <tr><td class="p-3 font-medium">Porteros</td>
+                    <td class="p-3">Paradas, salidas, despejes por alto</td>
+                    <td class="p-3">Goles encajados, malas salidas, errores que llevan a tiro/gol</td></tr>
+                <tr><td class="p-3 font-medium">Centrales</td>
+                    <td class="p-3">Duelos ganados, entradas exitosas, despejes, intercepciones, tiros bloqueados</td>
+                    <td class="p-3">Errores que llevan a tiro/gol, penaltis cometidos, nº veces regateado, faltas cometidas</td></tr>
+                <tr><td class="p-3 font-medium">Laterales / carrileros</td>
+                    <td class="p-3">Recuperaciones, duelos ganados, entradas exitosas, intercepciones, progresión de balón</td>
+                    <td class="p-3">Nº veces regateado, centros fallidos</td></tr>
+                <tr><td class="p-3 font-medium">Centrocampistas</td>
+                    <td class="p-3">Intercepciones, recuperaciones, duelos ganados, pases completados, regates exitosos</td>
+                    <td class="p-3">Pérdidas de balón, duelos perdidos</td></tr>
+                <tr><td class="p-3 font-medium">Bandas</td>
+                    <td class="p-3">Regates exitosos, pases clave, duelos en el suelo ganados, faltas recibidas</td>
+                    <td class="p-3">Regates fallidos, duelos en el suelo perdidos</td></tr>
+                <tr><td class="p-3 font-medium">Delanteros</td>
+                    <td class="p-3">Tiros a puerta, faltas recibidas</td>
+                    <td class="p-3">Ocasiones claras falladas, fueras de juego</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+  
+    <!-- Acciones relevantes -->
+    <section class="mb-10 text-center">
+      <h2 class="text-2xl font-semibold mb-4">Acciones relevantes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+        <div class="bg-green-50 p-4 rounded-2xl shadow">
+          <h3 class="font-semibold mb-2">Acciones positivas</h3>
+          <ul class="list-disc pl-6 text-sm space-y-1">
+            <li>Gol delantero → +0.3 a +0.5</li>
+            <li>Gol mediocampista → +0.5 a +0.7</li>
+            <li>Gol defensa → +0.7 a +0.9</li>
+            <li>Gol portero → +1.5 o más</li>
+            <li>Gol penalti → +0.2 a +0.3</li>
+            <li>Penalti provocado → +0.2 a +0.3</li>
+            <li>Asistencia → +0.3 a +0.4</li>
+            <li>Gran oportunidad creada → +0.1 a +0.2</li>
+            <li>Parada penalti (portero) → +0.8 a +1.0</li>
+            <li>Despeje en la línea de gol → +0.5 a +0.8</li>
+            <li>Intercepción clave o tackle salvador → +0.2 a +0.3</li>
+            <li>Portería a cero (portero) → +0.1 a +0.3 (según nº de paradas y dificultad)</li>
+            <li>Portería a cero (defensores) → +0.1 a +0.3 (más impacto en centrales)</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 p-4 rounded-2xl shadow">
+          <h3 class="font-semibold mb-2">Acciones negativas</h3>
+          <ul class="list-disc pl-6 text-sm space-y-1">
+            <li>Error que provoca gol → -0.5 a -0.8</li>
+            <li>Autogol → -0.4 a -0.7</li>
+            <li>Tarjeta amarilla → -0.1 a -0.2</li>
+            <li>Tarjeta roja → -1.0 a -2.0</li>
+            <li>Fallo en gran ocasión → -0.2 a -0.4</li>
+            <li>Cometer penalti → -0.5 a -0.8</li>
+            <li>Fallar penalti → -0.3 a -0.5</li>
+            <li>Gol recibido (portero, en juego) → -0.2 a -0.4</li>
+            <li>Gol penalti recibido (portero) → -0.1 a -0.2</li>
+            <li>Gol recibido (defensores) → -0.1 a -0.3 (depende de la línea defensiva)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  
+<!-- En el 95% de los casos, un jugador expulsado terminará con una puntuación por debajo de 6.0.
+
+ Lo más común es ver puntuaciones finales entre 4.5 y 5.8 después de una expulsión.
+
+ Una puntuación por encima de 6.0 tras una roja es extremadamente rara y solo pasaría si fue en el minuto 90+ y el jugador había sido absolutamente determinante hasta ese momento. -->
+  
+    <footer class="text-center text-gray-500 text-sm mt-10">
+      Los valores pueden variar según el contexto del partido y la actuación global del jugador.
+    </footer>
+  </div>
+</body>
+</html>
