@@ -617,7 +617,7 @@
 
   <div class="header-informe">
     <h1>Informe Jornada 1</h1>
-    <div class="resultado-principal">EFMO Boadilla &#039;B&#039; - CF Pozuelo de Alarcón &#039;B&#039;</div>
+    <div class="resultado-principal">EFMO Boadilla &#039;B&#039; 0-4 CF Pozuelo de Alarcón &#039;B&#039;</div>
   </div>
 
   <!-- Alineación Probable -->
@@ -650,12 +650,12 @@
                         "name": "A. Ávila"
                 },
                 {
-                        "number": "24",
-                        "name": "Pablo García"
-                },
-                {
                         "number": "14",
                         "name": "Gonzalo O."
+                },
+                {
+                        "number": "21",
+                        "name": "H. Revilla"
                 }
         ],
         "mediocentros": [
@@ -731,6 +731,539 @@
 
       // Renderizar formación para alineación probable
       renderFormationProbable('3-5-2'); 
+    </script>
+  </div>
+
+  <!-- Alineación Confirmada -->
+  <div class="seccion">
+    <h3>Alineación Confirmada</h3>
+
+    <div class="container-responsive">
+      <div class="header-responsive">
+        <div class="team-name-responsive">EFMO Boadilla &#039;B&#039;</div>
+        <div class="formation-responsive">3-5-2</div>
+      </div>
+
+      <div class="content-responsive">
+        <div class="field-container-responsive">
+          <div class="field-responsive">
+            <div class="grass-pattern-responsive"></div>
+
+            <div class="players-formation-responsive" id="formation-container-confirmada">
+              <!-- La formación se genera automáticamente -->
+            </div>
+          </div>
+        </div>
+
+        <div class="bench-responsive">
+          <div class="bench-title-responsive">Banquillo</div>
+          <div id="bench-container">
+            <!-- El banquillo se genera automáticamente -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Datos de los jugadores organizados por posición - ALINEACIÓN CONFIRMADA
+      const playersConfirmada = {
+        "portero": [
+                {
+                        "number": "13",
+                        "name": "Martín",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": null
+                }
+        ],
+        "defensas": [
+                {
+                        "number": "14",
+                        "name": "Gonzalo O.",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": null
+                },
+                {
+                        "number": "4",
+                        "name": "A. Ávila",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": "🟨"
+                },
+                {
+                        "number": "21",
+                        "name": "H. Revilla",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": null
+                }
+        ],
+        "mediocentros": [
+                {
+                        "number": "11",
+                        "name": "Ángel",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": null
+                },
+                {
+                        "number": "20",
+                        "name": "Dani Moreno",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": null
+                },
+                {
+                        "number": "10",
+                        "name": "N. Marejil",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": null
+                },
+                {
+                        "number": "8",
+                        "name": "H. Estévez",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": null
+                },
+                {
+                        "number": "17",
+                        "name": "A. Iza",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": "🟨"
+                }
+        ],
+        "delanteros": [
+                {
+                        "number": "16",
+                        "name": "Iker",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": null
+                },
+                {
+                        "number": "25",
+                        "name": "Kike",
+                        "rating": "-",
+                        "goals": 0,
+                        "assists": 0,
+                        "cards": null
+                }
+        ]
+};
+
+      // Datos del banquillo
+      const benchPlayers = [
+        {
+                "number": "23",
+                "name": "R. Calvin",
+                "rating": "-",
+                "goals": 0,
+                "assists": 0,
+                "cards": "🟨"
+        },
+        {
+                "number": "15",
+                "name": "Toril",
+                "rating": "-",
+                "goals": 0,
+                "assists": 0,
+                "cards": null
+        },
+        {
+                "number": "2",
+                "name": "M. Berruezo",
+                "rating": "-",
+                "goals": 0,
+                "assists": 0,
+                "cards": null
+        },
+        {
+                "number": "3",
+                "name": "Nacho J.",
+                "rating": "-",
+                "goals": 0,
+                "assists": 0,
+                "cards": null
+        },
+        {
+                "number": "7",
+                "name": "Lence",
+                "rating": "-",
+                "goals": 0,
+                "assists": 0,
+                "cards": null
+        },
+        {
+                "number": "19",
+                "name": "Gabri Varona",
+                "rating": "-",
+                "goals": 0,
+                "assists": 0,
+                "cards": null
+        },
+        {
+                "number": "9",
+                "name": "Ares",
+                "rating": "-",
+                "goals": 0,
+                "assists": 0,
+                "cards": null
+        }
+];
+
+      // Configuraciones de formaciones
+      const formationsConfirmada = {
+        '3-5-2': [
+          playersConfirmada.delanteros,
+          playersConfirmada.mediocentros,
+          playersConfirmada.defensas,
+          playersConfirmada.portero
+        ]
+      };
+
+      // Función para aplicar el color correcto según la puntuación
+      function applyRatingColor(element, rating) {
+        if (rating === '-' || !rating) {
+          element.classList.add('score-gray');
+          return;
+        }
+
+        const numericRating = parseFloat(String(rating).replace(',', '.'));
+        if (isNaN(numericRating)) {
+          element.classList.add('score-gray');
+          return;
+        }
+
+        if (numericRating >= 9.0) {
+          element.classList.add('score-darkblue');
+        } else if (numericRating >= 8.0) {
+          element.classList.add('score-blue');
+        } else if (numericRating >= 7.0) {
+          element.classList.add('score-green');
+        } else if (numericRating >= 6.0) {
+          element.classList.add('score-yellow');
+        } else if (numericRating >= 3.0) {
+          element.classList.add('score-red');
+        } else {
+          element.classList.add('score-gray');
+        }
+      }
+
+      // Función para crear HTML de estadísticas
+      function createStatsHTML(goals, assists, cards) {
+        let statsHTML = '';
+        let cardsHTML = '';
+        
+        // HTML para goles y asistencias (a la derecha)
+        if (goals > 0 || assists > 0) {
+          const goalsHTML = goals > 0 ? 
+            `<div class="player-goals-row-responsive">${'⚽'.repeat(goals)}</div>` : '';
+          
+          const assistsHTML = assists > 0 ? 
+            `<div class="player-assists-row-responsive">${'🅰️'.repeat(assists)}</div>` : '';
+          
+          statsHTML = `
+            <div class="player-stats-side-responsive">
+              ${goalsHTML}
+              ${assistsHTML}
+            </div>
+          `;
+        }
+        
+        // HTML para tarjetas (a la izquierda)
+        if (cards) {
+          cardsHTML = `
+            <div class="player-cards-side-responsive">
+              <div class="player-cards-row-responsive">${cards}</div>
+            </div>
+          `;
+        }
+        
+        return statsHTML + cardsHTML;
+      }
+
+      // Función para renderizar una formación
+      function renderFormationConfirmada(formationKey) {
+        const formationContainer = document.getElementById('formation-container-confirmada');
+        formationContainer.innerHTML = '';
+
+        const formation = formationsConfirmada[formationKey] || formationsConfirmada['3-5-2'];
+
+        formation.forEach(rowPlayers => {
+          const row = document.createElement('div');
+          row.className = 'player-row-responsive';
+
+          rowPlayers.forEach(player => {
+            const playerElement = document.createElement('div');
+            playerElement.className = 'player-responsive';
+
+            const statsHTML = createStatsHTML(player.goals || 0, player.assists || 0, player.cards);
+
+            playerElement.innerHTML = `
+              <div class="player-with-stats-responsive">
+                <div class="player-main-info-responsive">
+                  <div class="player-circle-responsive">${player.number}</div>
+                  <div class="player-rating-responsive">${player.rating || '-'}</div>
+                  <div class="player-name-responsive">${player.name}</div>
+                </div>
+                ${statsHTML}
+              </div>
+            `;
+
+            row.appendChild(playerElement);
+          });
+
+          formationContainer.appendChild(row);
+        });
+
+        // Aplicar colores a los ratings
+        document.querySelectorAll('.player-rating-responsive').forEach(ratingElement => {
+          const rating = ratingElement.textContent;
+          applyRatingColor(ratingElement, rating);
+        });
+
+        const formationDisplay = document.querySelector('.formation-responsive');
+        if (formationDisplay) {
+          formationDisplay.textContent = formationKey;
+        }
+      }
+
+      // Función para renderizar el banquillo
+      function renderBench() {
+        const benchContainer = document.getElementById('bench-container');
+        if (!benchContainer) return;
+        benchContainer.innerHTML = '';
+
+        benchPlayers.forEach(player => {
+          const benchPlayerElement = document.createElement('div');
+          benchPlayerElement.className = 'bench-player-responsive';
+
+          let statsHTML = '';
+          if ((player.goals && player.goals > 0) || (player.assists && player.assists > 0) || player.cards) {
+            const goalsText = (player.goals && player.goals > 0) ? '⚽'.repeat(player.goals) : '';
+            const assistsText = (player.assists && player.assists > 0) ? '🅰️'.repeat(player.assists) : '';
+            const cardsText = player.cards ? player.cards : '';
+            
+            statsHTML = `
+              <div class="bench-player-stats-responsive">
+                ${cardsText}${goalsText}${assistsText}
+              </div>
+            `;
+          }
+
+          benchPlayerElement.innerHTML = `
+            <div class="bench-player-info-responsive">
+              <div class="bench-player-number-responsive">${player.number}</div>
+              <div class="bench-player-name-responsive">${player.name}</div>
+            </div>
+            ${statsHTML}
+            <div class="bench-player-rating-responsive">${player.rating || '-'}</div>
+          `;
+
+          benchContainer.appendChild(benchPlayerElement);
+        });
+
+        // Aplicar colores a los ratings del banquillo
+        document.querySelectorAll('.bench-player-rating-responsive').forEach(ratingElement => {
+          const rating = ratingElement.textContent;
+          applyRatingColor(ratingElement, rating);
+        });
+      }
+
+      renderFormationConfirmada('3-5-2');
+      renderBench();
+    </script>
+  </div>
+
+  <!-- Goles: Sin goles a favor registrados o sección omitida -->
+
+  <!-- Cambios -->
+  <div class="seccion">
+    <h3>Cambios Realizados</h3>
+    <div class="cambios-lista">
+      <div class="cambio">
+        <span class="minuto">61'</span>
+        <div class="jugadores-cambio">
+          <span>H. Revilla</span>
+          <span class="flecha">→</span>
+          <span>R. Calvin</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">61'</span>
+        <div class="jugadores-cambio">
+          <span>H. Estévez</span>
+          <span class="flecha">→</span>
+          <span>Nacho J.</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">61'</span>
+        <div class="jugadores-cambio">
+          <span>Dani Moreno</span>
+          <span class="flecha">→</span>
+          <span>Lence</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">61'</span>
+        <div class="jugadores-cambio">
+          <span>Kike</span>
+          <span class="flecha">→</span>
+          <span>Ares</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">71'</span>
+        <div class="jugadores-cambio">
+          <span>A. Iza</span>
+          <span class="flecha">→</span>
+          <span>M. Berruezo</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">71'</span>
+        <div class="jugadores-cambio">
+          <span>Iker</span>
+          <span class="flecha">→</span>
+          <span>Gabri Varona</span>
+        </div>
+      </div>
+      <div class="cambio">
+        <span class="minuto">75'</span>
+        <div class="jugadores-cambio">
+          <span>Ángel</span>
+          <span class="flecha">→</span>
+          <span>Toril</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Once Final -->
+  <div class="seccion">
+    <h3>Once Final</h3>
+    <div class="formacion-titulo">3-5-2</div>
+
+    <div class="field-container-responsive">
+      <div class="field-responsive">
+        <div class="grass-pattern-responsive"></div>
+
+        <div class="players-formation-responsive" id="formation-container-final">
+          <!-- La formación se genera automáticamente -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Datos de los jugadores organizados por posición - ONCE FINAL
+      const playersFinal = {
+        "portero": [
+                {
+                        "number": "13",
+                        "name": "Martín"
+                }
+        ],
+        "defensas": [
+                {
+                        "number": "14",
+                        "name": "Gonzalo O."
+                },
+                {
+                        "number": "4",
+                        "name": "A. Ávila"
+                },
+                {
+                        "number": "23",
+                        "name": "R. Calvin"
+                }
+        ],
+        "mediocentros": [
+                {
+                        "number": "15",
+                        "name": "Toril"
+                },
+                {
+                        "number": "3",
+                        "name": "Nacho J."
+                },
+                {
+                        "number": "7",
+                        "name": "Lence"
+                },
+                {
+                        "number": "10",
+                        "name": "N. Marejil"
+                },
+                {
+                        "number": "2",
+                        "name": "M. Berruezo"
+                }
+        ],
+        "delanteros": [
+                {
+                        "number": "19",
+                        "name": "Gabri Varona"
+                },
+                {
+                        "number": "9",
+                        "name": "Ares"
+                }
+        ]
+};
+
+      // Configuraciones de formaciones
+      const formationsFinal = {
+        '3-5-2': [
+          playersFinal.delanteros,
+          playersFinal.mediocentros,
+          playersFinal.defensas,
+          playersFinal.portero
+        ]
+      };
+
+      // Función para renderizar una formación
+      function renderFormationFinal(formationKey) {
+        const formationContainer = document.getElementById('formation-container-final');
+        formationContainer.innerHTML = '';
+
+        const formation = formationsFinal[formationKey] || formationsFinal['3-5-2'];
+
+        formation.forEach(rowPlayers => {
+          const row = document.createElement('div');
+          row.className = 'player-row-responsive';
+
+          rowPlayers.forEach(player => {
+            const playerElement = document.createElement('div');
+            playerElement.className = 'player-responsive';
+
+            playerElement.innerHTML = `
+              <div class="player-circle-responsive">${player.number}</div>
+              <div class="player-name-responsive">${player.name}</div>
+            `;
+
+            row.appendChild(playerElement);
+          });
+
+          formationContainer.appendChild(row);
+        });
+      }
+
+      // Renderizar formación para once final
+      renderFormationFinal('3-5-2'); 
     </script>
   </div>
 
