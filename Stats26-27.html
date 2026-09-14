@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stats Temp. 25/26</title>
+  <title>Stats Temp. 26/27</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -292,12 +292,12 @@
 
     .matches-list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
       height: 0;
       overflow: hidden;
-      transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .matches-list.expanded {
@@ -412,7 +412,7 @@
 </head>
 <body>
   <div class="header">
-    <h1 class="title">Estadísticas Temp. 25/26</h1>
+    <h1 class="title">Estadísticas Temp. 26/27</h1>
   </div>
 
   <div class="card-container" id="tabla-jugadores">
@@ -424,41 +424,354 @@
   </div>
 
   <script>
-    // Datos de los jugadores con los minutos jugados en cada partido
-    // Falta el asistente del gol de Manu Medina de la J28
+    // Datos de los jugadores con los minutos jugados en cada partido (actualizados dinámicamente)
     const jugadores = [
-    {nombre: "J. Agudo", goles: 0, asistencias: 0, minutos: [0, 54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45, 90, 90, 0, 0, 0, 0, 0, 0, 90, 0, 0]},
-    {nombre: "Gabri", goles: 0, asistencias: 1, minutos: [0, 0, 90, 0, 90, 0, 90, 0, 90, 10, 90, 0, 90, 90, 90, 90, 90, 90, 45, 0, 0, 0, 90, 90, 90, 90, 90, 0, 90, 90]},
-    {nombre: "Álvaro", goles: 0, asistencias: 0, minutos: [90, 36, 0, 90, 0, 90, 0, 90, 0, 80, 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
-    {nombre: "Luisja", goles: 1, asistencias: 1, minutos: [90, 90, 90, 90, 90, 90, 0, 90, 90, 0, 0, 0, 90, 0, 90, 0, 90, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
-    {nombre: "J. Martínez", goles: 2, asistencias: 2, minutos: [90, 90, 63, 90, 90, 62, 90, 52, 0, 90, 87, 0, 0, 90, 90, 90, 0, 0, 65, 90, 90, 0, 90, 90, 90, 90, 0, 0, 0, 0]},
-    {nombre: "Rafa Crooke", goles: 0, asistencias: 1, minutos: [0, 26, 0, 90, 90, 90, 0, 0, 0, 90, 90, 0, 0, 0, 90, 90, 90, 0, 45, 90, 90, 0, 0, 0, 0, 29, 90, 26, 30, 90]},
-    {nombre: "Jacobo", goles: 0, asistencias: 0, minutos: [0, 0, 63, 0, 0, 53, 0, 0, 0, 45, 0, 0, 82, 0, 0, 0, 26, 90, 45, 90, 0, 0, 90, 90, 0, 61, 90, 34, 83, 59]},
-    {nombre: "Rodri", goles: 0, asistencias: 0, minutos: [90, 90, 90, 0, 0, 0, 0, 0, 65, 0, 0, 90, 0, 90, 29, 64, 90, 90, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 0]},
-    {nombre: "Adriano", goles: 0, asistencias: 1, minutos: [90, 64, 27, 90, 68, 0, 90, 90, 90, 0, 90, 90, 90, 90, 61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 64, 30, 8]},
-    {nombre: "Á. Infante", goles: 0, asistencias: 0, minutos: [0, 0, 0, 0, 22, 0, 0, 0, 25, 45, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 90, 0, 0, 32, 90, 72, 0, 56, 7, 23]},
-    {nombre: "A. Molina", goles: 1, asistencias: 1, minutos: [45, 75, 0, 45, 0, 2, 61, 45, 15, 45, 3, 90, 0, 17, 61, 0, 90, 90, 90, 64, 90, 0, 26, 90, 90, 0, 80, 90, 90, 59]},
-    {nombre: "L. Lausín", goles: 0, asistencias: 1, minutos: [0, 15, 20, 19, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 70, 64, 32, 90, 90, 45, 0, 17, 76, 90, 0, 90, 90, 90, 90]},
-    {nombre: "J. Zarcero", goles: 0, asistencias: 1, minutos: [90, 0, 90, 71, 45, 90, 90, 90, 90, 90, 90, 90, 90, 79, 0, 0, 0, 0, 0, 0, 0, 0, 64, 0, 0, 0, 0, 26, 0, 31]},
-    {nombre: "Kito", goles: 4, asistencias: 4, minutos: [90, 75, 70, 45, 68, 0, 90, 45, 75, 45, 45, 33, 74, 90, 0, 90, 64, 0, 45, 45, 0, 0, 90, 90, 0, 90, 0, 0, 0, 0]},
-    {nombre: "Víctor Jaén", goles: 2, asistencias: 0, minutos: [21, 15, 63, 0, 45, 90, 38, 45, 20, 10, 45, 16, 8, 11, 29, 90, 45, 73, 25, 0, 45, 0, 10, 58, 90, 90, 63, 56, 60, 90]},
-    {nombre: "Á. Brito", goles: 4, asistencias: 4, minutos: [72, 75, 90, 82, 45, 90, 90, 38, 0, 0, 45, 0, 90, 73, 79, 90, 45, 90, 90, 90, 0, 0, 80, 70, 70, 90, 0, 0, 0, 0]},
-    {nombre: "Pablo", goles: 1, asistencias: 1, minutos: [69, 0, 0, 0, 0, 0, 0, 45, 70, 80, 82, 90, 0, 45, 0, 0, 45, 64, 90, 64, 45, 0, 0, 0, 25, 0, 90, 0, 90, 90]},
-    {nombre: "Javi Pardo", goles: 2, asistencias: 2, minutos: [0, 90, 90, 90, 69, 28, 0, 45, 0, 90, 45, 74, 90, 73, 0, 90, 64, 0, 0, 0, 90, 0, 80, 0, 77, 90, 90, 90, 0, 45]},
-    {nombre: "Mario", goles: 1, asistencias: 0, minutos: [0, 0, 0, 0, 22, 62, 90, 82, 90, 45, 8, 90, 16, 17, 90, 26, 26, 17, 65, 26, 90, 0, 80, 90, 65, 0, 27, 34, 90, 90]},
-    {nombre: "J. Ogayar", goles: 1, asistencias: 3, minutos: [18, 15, 27, 90, 45, 28, 61, 66, 90, 90, 82, 90, 90, 90, 90, 0, 45, 90, 90, 90, 0, 0, 10, 0, 20, 90, 73, 90, 30, 59]},
-    {nombre: "Rodri de Castro", goles: 2, asistencias: 0, minutos: [0, 0, 0, 0, 0, 0, 29, 24, 75, 45, 45, 57, 0, 45, 61, 0, 26, 90, 45, 45, 10, 0, 90, 90, 90, 90, 80, 90, 90, 45]},
-    {nombre: "H. Panizo", goles: 2, asistencias: 1, minutos: [45, 64, 27, 45, 68, 88, 52, 45, 0, 0, 8, 74, 82, 0, 0, 0, 0, 0, 0, 26, 80, 0, 73, 90, 0, 0, 90, 0, 49, 31]},
-    {nombre: "Manu Medina", goles: 1, asistencias: 0, minutos: [0, 0, 0, 8, 22, 0, 0, 8, 15, 0, 45, 0, 0, 0, 11, 20, 0, 0, 25, 0, 0, 0, 10, 20, 13, 21, 10, 64, 60, 31]},
-    {nombre: "Manu de V.", goles: 5, asistencias: 1, minutos: [45, 26, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 59, 90, 64, 64, 58, 0, 64, 45, 0, 64, 0, 90, 0, 0, 90, 41, 59]},
-    {nombre: "S. Griñán", goles: 13, asistencias: 3, minutos: [45, 90, 63, 45, 90, 90, 90, 90, 90, 90, 90, 16, 58, 31, 29, 26, 26, 0, 0, 26, 90, 0, 26, 0, 0, 69, 0, 0, 0, 0]},
-    {nombre: "Manu (JB)", goles: 0, asistencias: 0, minutos: [0, 0, 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
-    {nombre: "Adri (JB)", goles: 0, asistencias: 0, minutos: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 89, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
-    {nombre: "M. Danini (JB)", goles: 0, asistencias: 0, minutos: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
-    {nombre: "Yago (JC)", goles: 0, asistencias: 0, minutos: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0]},
-    {nombre: "Gael (JF)", goles: 0, asistencias: 0, minutos: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0]},
-    {nombre: "Sergio (JF)", goles: 0, asistencias: 0, minutos: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0]}
-    ];
+  {
+    "nombre": "Martín",
+    "posicion": "Portero",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      90
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 90
+      }
+    ]
+  },
+  {
+    "nombre": "Nico",
+    "posicion": "Portero",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      0
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 0
+      }
+    ]
+  },
+  {
+    "nombre": "S. Montero",
+    "posicion": "Portero",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      0
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 0
+      }
+    ]
+  },
+  {
+    "nombre": "A. Ávila",
+    "posicion": "Defensa",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      90
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 90
+      }
+    ]
+  },
+  {
+    "nombre": "Pablo García",
+    "posicion": "Defensa",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      0
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 0
+      }
+    ]
+  },
+  {
+    "nombre": "Gonzalo O.",
+    "posicion": "Defensa",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      90
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 90
+      }
+    ]
+  },
+  {
+    "nombre": "H. Revilla",
+    "posicion": "Defensa",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      61
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 61
+      }
+    ]
+  },
+  {
+    "nombre": "A. Iza",
+    "posicion": "Defensa",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      71
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 71
+      }
+    ]
+  },
+  {
+    "nombre": "M. Berruezo",
+    "posicion": "Centrocampista",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      19
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 19
+      }
+    ]
+  },
+  {
+    "nombre": "Ángel",
+    "posicion": "Centrocampista",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      75
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 75
+      }
+    ]
+  },
+  {
+    "nombre": "Nacho J.",
+    "posicion": "Centrocampista",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      29
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 29
+      }
+    ]
+  },
+  {
+    "nombre": "Sergio",
+    "posicion": "Centrocampista",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      0
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 0
+      }
+    ]
+  },
+  {
+    "nombre": "R. Calvin",
+    "posicion": "Centrocampista",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      29
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 29
+      }
+    ]
+  },
+  {
+    "nombre": "Dani Moreno",
+    "posicion": "Centrocampista",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      61
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 61
+      }
+    ]
+  },
+  {
+    "nombre": "H. Estévez",
+    "posicion": "Centrocampista",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      61
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 61
+      }
+    ]
+  },
+  {
+    "nombre": "N. Marejil",
+    "posicion": "Centrocampista",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      90
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 90
+      }
+    ]
+  },
+  {
+    "nombre": "Toril",
+    "posicion": "Centrocampista",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      15
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 15
+      }
+    ]
+  },
+  {
+    "nombre": "Lence",
+    "posicion": "Centrocampista",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      29
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 29
+      }
+    ]
+  },
+  {
+    "nombre": "Gabri Varona",
+    "posicion": "Delantero",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      19
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 19
+      }
+    ]
+  },
+  {
+    "nombre": "Iker",
+    "posicion": "Delantero",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      71
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 71
+      }
+    ]
+  },
+  {
+    "nombre": "Guille G.",
+    "posicion": "Delantero",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      0
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 0
+      }
+    ]
+  },
+  {
+    "nombre": "Kike",
+    "posicion": "Delantero",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      61
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 61
+      }
+    ]
+  },
+  {
+    "nombre": "Ares",
+    "posicion": "Delantero",
+    "goles": 0,
+    "asistencias": 0,
+    "minutos": [
+      29
+    ],
+    "jornadasMinutos": [
+      {
+        "jornada": 1,
+        "minutos": 29
+      }
+    ]
+  }
+];
 
     // Función para obtener la clase de color según el índice de la jornada (patrón de 3)
     function obtenerClaseColor(indiceJornada) {
@@ -478,12 +791,12 @@
         tarjeta.classList.add("card");
 
         // Añadir animación escalonada
-        tarjeta.style.animationDelay = `${index * 0.05}s`;
+        tarjeta.style.animationDelay = (index * 0.05) + 's';
 
         tarjeta.innerHTML = `
           <div class="card-header">
             <div class="player-name">${jugador.nombre}</div>
-            <div class="player-position">Jugador</div>
+            <div class="player-position">${jugador.posicion || 'Jugador'}</div>
             <div class="player-stats">
               <div class="stat-item">
                 <span class="stat-value">${jugador.goles}</span>
@@ -502,14 +815,17 @@
           <div class="card-body">
             <button class="toggle-details">Desglose por jornadas</button>
             <div class="matches-list">
-             ${jugador.minutos.map((minuto, i) => `
-  <div class="match-item ${obtenerClaseColor(i)}">
-    <div class="match-journey">J${i + 1}</div>
-    <div class="match-minutes">
-      ${(i === 21 && minuto === 0) ? 'VA' : minuto + "'"}
-    </div>
-  </div>
-`).join('')}
+              ${(jugador.jornadasMinutos && jugador.jornadasMinutos.length > 0)
+                ? jugador.jornadasMinutos.map((item, i) => `
+                    <div class="match-item ${obtenerClaseColor(i)}">
+                      <div class="match-journey">J${item.jornada}</div>
+                      <div class="match-minutes">
+                        ${item.minutos}'
+                      </div>
+                    </div>
+                  `).join('')
+                : '<div style="grid-column: 1 / -1; text-align: center; padding: 10px; font-size: 0.8rem; opacity: 0.8; font-style: italic;">Sin partidos disputados con informe todavía</div>'
+              }
             </div>
           </div>
         `;
