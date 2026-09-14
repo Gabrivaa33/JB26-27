@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fantasy EFMO</title>
+  <title>Fantasy EFMO Boadilla 'B'</title>
   <link rel="icon" href="favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -693,7 +693,7 @@
 <body>
 <div class="app-container">
   <header class="header">
-    <h1>Fantasy EFMO</h1>
+    <h1>Fantasy EFMO Boadilla 'B'</h1>
   </header>
 
   <div class="dashboard">
@@ -706,7 +706,7 @@
         <div class="stats-grid">
           <div class="stat-item">
             <div class="stat-icon"><i class="fas fa-users"></i></div>
-            <div class="stat-value" id="playerCount">25</div>
+            <div class="stat-value" id="playerCount">0</div>
             <div class="stat-label">Jugadores</div>
           </div>
           <div class="stat-item">
@@ -762,7 +762,7 @@
     <div class="players-section">
       <div class="players-header">
         <h2 class="players-title">Plantilla del Equipo</h2>
-        <div class="players-count">Mostrando <span id="showingCount">25</span> de <span id="totalPlayers">25</span> jugadores</div>
+        <div class="players-count">Mostrando <span id="showingCount">0</span> de <span id="totalPlayers">0</span> jugadores</div>
       </div>
       <div id="gridView" class="players-grid">
         <!-- Las tarjetas de jugadores se cargarán aquí -->
@@ -832,1077 +832,438 @@
   // Datos de jugadores y noticias
   // {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'}
   const players = [
-    { id:1, name:'J. Agudo', pos:'Portero', status:'OK', special: false, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:54, goals:0, assists:0, cards:0, comment:'↪️ (Sin grabación)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:1, comment:'🟨'},
-        {points:3, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,7)'},
-        {points:10, minutes:90, goals:0, assists:0, cards:0, comment:'(8,3)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(Sin grabación)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-      ]},
-
-    { id:2, name:'Gabri', pos:'Portero', status:'OK', special: false, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:1, minutes:90, goals:0, assists:0, cards:0, comment:'(6,3)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:8, minutes:90, goals:0, assists:0, cards:0, comment:'(7,7)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:12, minutes:90, goals:0, assists:0, cards:0, comment:'(9,4)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,1)'},
-        {points:2, minutes:10, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:0, minutes:90, goals:0, assists:0, cards:0, comment:'(6,0)'},
-        {points:1, minutes:90, goals:0, assists:0, cards:0, comment:'(6,3)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,8)'},
-        {points:11, minutes:90, goals:0, assists:0, cards:0, comment:'(9,0)'},
-        {points:-1, minutes:90, goals:0, assists:0, cards:0, comment:'(5,9)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,8)'},
-        {points:5, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (7,1)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:8, minutes:90, goals:0, assists:0, cards:0, comment:'(7,6)'},
-        {points:10, minutes:90, goals:0, assists:0, cards:0, comment:'(8,5)'},
-        {points:9, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,9)'},
-        {points:7, minutes:90, goals:0, assists:1, cards:0, comment:'🅰️ (7,3+🅰️)'},
-        {points:11, minutes:90, goals:0, assists:0, cards:0, comment:'(8,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,1)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,3)'},
-      ]},
-
-    { id:3, name:'Álvaro', pos:'Portero', status:'Duda', special: false, performances:[
-        {points:2, minutes:90, goals:0, assists:0, cards:0, comment:'(6,5)'},
-        {points:null, minutes:36, goals:0, assists:0, cards:0, comment:'↩️ (Sin grabación)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,1)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:2, minutes:90, goals:0, assists:0, cards:0, comment:'(6,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:2, minutes:90, goals:0, assists:0, cards:0, comment:'(6,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:12, minutes:80, goals:0, assists:0, cards:0, comment:'↪️ (9,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:-3, minutes:90, goals:0, assists:0, cards:0, comment:'(5,0)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-      ]},
-
-    { id:4, name:'Luisja', pos:'Defensa', status:'OK', special: false, performances:[
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,2)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (Sin grabación)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,8)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,9)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,1)'},
-        {points:11, minutes:90, goals:0, assists:0, cards:0, comment:'(8,6)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:11, minutes:90, goals:0, assists:1, cards:0, comment:'🅰️ (8,0+🅰️)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,3)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:10, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (8,1)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:11, minutes:90, goals:1, assists:0, cards:0, comment:'⚽ (7,3+⚽)'},
-        {points:5, minutes:64, goals:0, assists:0, cards:1, comment:'🟨↪️ (7,0)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-      ]},
-
-    { id:5, name:'J. Martínez', pos:'Centrocampista', status:'OK', special: false, performances:[
-        {points:3, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,7)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (Sin grabación)'},
-        {points:9, minutes:63, goals:1, assists:0, cards:0, comment:'↪️⚽ (7,3+⚽)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,6)'},
-        {points:6, minutes:90, goals:0, assists:1, cards:0, comment:'🅰️ (7,0+🅰️)'},
-        {points:3, minutes:62, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,7)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,3)'},
-        {points:7, minutes:52, goals:0, assists:0, cards:1, comment:'🟨 (7,4)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:5, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,1)'},
-        {points:2, minutes:87, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,6)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,1)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:12, minutes:65, goals:1, assists:0, cards:0, comment:'↪️⚽ (7,4+⚽)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:8, minutes:90, goals:0, assists:0, cards:0, comment:'(7,6)'},
-        {points:8, minutes:90, goals:0, assists:0, cards:0, comment:'(7,6)'},
-        {points:2, minutes:90, goals:0, assists:0, cards:0, comment:'(6,4)'},
-        {points:7, minutes:90, goals:0, assists:1, cards:1, comment:'🟨🅰️ (7,3+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-      ]},
-
-    { id:6, name:'Rafa Crooke', pos:'Defensa', status:'OK', special: false, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (Sin grabación)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:0, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,0)'},
-        {points:9, minutes:90, goals:0, assists:0, cards:0, comment:'(7,8)'},
-        {points:7, minutes:90, goals:0, assists:0, cards:0, comment:'(7,4)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:1, minutes:90, goals:0, assists:0, cards:0, comment:'(6,3)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,6)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,3)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,1)'},
-        {points:1, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:1, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,3)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,6)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:3, minutes:29, goals:0, assists:0, cards:0, comment:'↩️ (6,7)'},
-        {points:2, minutes:90, goals:0, assists:0, cards:0, comment:'(6,5)'},
-        {points:null, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (Sin grabación)'},
-        {points:2, minutes:30, goals:0, assists:0, cards:0, comment:'🟨↩️ (6,5)'},
-        {points:9, minutes:90, goals:0, assists:1, cards:0, comment:'🅰️ (7,6+🅰️)'},
-      ]},
-
-    { id:7, name:'Jacobo', pos:'Defensa', status:'OK', special: false, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:4, minutes:63, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:-8, minutes:53, goals:0, assists:0, cards:0, comment:'🟥 (5,4+🟥)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:5, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (7,0)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:4, minutes:82, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:-1, minutes:26, goals:0, assists:0, cards:1, comment:'🟨↩️ (5,8)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,0)'},
-        {points:4, minutes:45, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,9)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,8)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:8, minutes:90, goals:0, assists:0, cards:0, comment:'(7,6)'},
-        {points:8, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,6)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:5, minutes:61, goals:0, assists:0, cards:1, comment:'🟨↪️ (7,0)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,2)'},
-        {points:null, minutes:34, goals:0, assists:0, cards:1, comment:'🟨↩️ (Sin grabación)'},
-        {points:1, minutes:83, goals:0, assists:0, cards:0, comment:'↪️🔴 (6,2)'},
-        {points:1, minutes:59, goals:0, assists:0, cards:0, comment:'↪️ (6,2)'},
-      ]},
-
-    { id:8, name:'Rodri', pos:'Defensa', status:'Duda', special: false, performances:[
-        {points:2, minutes:90, goals:0, assists:0, cards:0, comment:'(6,4)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(Sin grabación)'},
-        {points:1, minutes:90, goals:0, assists:0, cards:0, comment:'(6,3)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:2, minutes:65, goals:0, assists:0, cards:0, comment:'↪️ (6,4)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:-2, minutes:90, goals:0, assists:0, cards:0, comment:'(5,6)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:2, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,4)'},
-        {points:4, minutes:29, goals:0, assists:0, cards:0, comment:'↩️ (6,8)'},
-        {points:6, minutes:64, goals:0, assists:0, cards:0, comment:'↪️ (7,2)'},
-        {points:2, minutes:90, goals:0, assists:0, cards:0, comment:'(6,4)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,9)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,8)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:4, minutes:60, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,8)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-      ]},
-
-    { id:9, name:'Adriano', pos:'Defensa', status:'OK', special: false, performances:[
-        {points:9, minutes:90, goals:0, assists:0, cards:0, comment:'(7,8)'},
-        {points:null, minutes:64, goals:0, assists:0, cards:1, comment:'🟨↪️ (Sin grabación)'},
-        {points:2, minutes:27, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:8, minutes:68, goals:0, assists:0, cards:0, comment:'↪️ (7,6)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:-1, minutes:90, goals:0, assists:0, cards:0, comment:'🟥 (7,0+🟥)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,9)'},
-        {points:8, minutes:90, goals:0, assists:1, cards:0, comment:'🅰️ (7,4+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,8)'},
-        {points:-1, minutes:90, goals:0, assists:0, cards:0, comment:'(5,8)'},
-        {points:2, minutes:90, goals:0, assists:0, cards:0, comment:'(6,4)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,8)'},
-        {points:7, minutes:61, goals:0, assists:0, cards:0, comment:'↪️ (7,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:4, minutes:18, goals:0, assists:0, cards:0, comment:'↩️ (6,8)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:64, goals:0, assists:0, cards:0, comment:'↪️ (Sin grabación)'},
-        {points:3, minutes:30, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:3, minutes:8, goals:0, assists:0, cards:0, comment:'↩️↪️ (6,6)'},
-      ]},
-
-    { id:10, name:'Á. Infante', pos:'Defensa', status:'OK', special: false, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:6, minutes:22, goals:0, assists:0, cards:0, comment:'↩️ (7,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:3, minutes:25, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:4, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,8)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:3, minutes:8, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:2, minutes:32, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:10, minutes:90, goals:0, assists:0, cards:0, comment:'(8,0)'},
-        {points:4, minutes:72, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:56, goals:0, assists:0, cards:0, comment:'↪️ (Sin grabación)'},
-        {points:2, minutes:7, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,5)'},
-        {points:2, minutes:23, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-      ]},
-
-    { id:11, name:'A. Molina', pos:'Centrocampista', status:'OK', special: false, performances:[
-        {points:4, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,8)'},
-        {points:null, minutes:75, goals:0, assists:0, cards:0, comment:'↪️ (Sin grabación)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:2, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:2, minutes:2, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:11, minutes:61, goals:1, assists:0, cards:0, comment:'↪️⚽ (7,6+⚽)'},
-        {points:3, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,7)'},
-        {points:3, minutes:15, goals:0, assists:0, cards:0, comment:'↩️ (6,7)'},
-        {points:1, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,3)'},
-        {points:null, minutes:3, goals:0, assists:0, cards:0, comment:'↩️ (-)'},
-        {points:5, minutes:90, goals:0, assists:1, cards:0, comment:'🅰️ (6,8+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:2, minutes:17, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:4, minutes:61, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:0, minutes:90, goals:0, assists:0, cards:0, comment:'(6,1)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,9)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,6)'},
-        {points:2, minutes:64, goals:0, assists:0, cards:0, comment:'↪️ (6,4)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:2, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:1, minutes:90, goals:0, assists:0, cards:0, comment:'(6,2)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:2, minutes:80, goals:0, assists:0, cards:0, comment:'↪️ (6,4)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(Sin grabación)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:4, minutes:59, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
-      ]},
-
-    { id:12, name:'L. Lausín', pos:'Centrocampista', status:'OK', special: false, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:15, goals:0, assists:0, cards:0, comment:'↩️ (Sin grabación)'},
-        {points:2, minutes:20, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:3, minutes:19, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:3, minutes:21, goals:0, assists:0, cards:0, comment:'↩️ (6,7)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:7, minutes:70, goals:0, assists:1, cards:0, comment:'↪️🅰️ (7,2+🅰️)'},
-        {points:6, minutes:64, goals:0, assists:0, cards:0, comment:'↪️ (7,3)'},
-        {points:4, minutes:32, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,1)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,1)'},
-        {points:null, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:3, minutes:17, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:5, minutes:76, goals:0, assists:0, cards:0, comment:'↪️ (7,0)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(Sin grabación)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,2)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,1)'},
-      ]},
-
-    { id:13, name:'J. Zarcero', pos:'Defensa', status:'Duda', special: false, performances:[
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:4, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,8)'},
-        {points:7, minutes:71, goals:0, assists:0, cards:0, comment:'↪️ (7,4)'},
-        {points:3, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,7)'},
-        {points:9, minutes:90, goals:0, assists:0, cards:0, comment:'(7,9)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,3)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,3)'},
-        {points:8, minutes:90, goals:0, assists:1, cards:0, comment:'🅰️ (7,5+🅰️)'},
-        {points:8, minutes:90, goals:0, assists:0, cards:0, comment:'(7,6)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,7)'},
-        {points:1, minutes:90, goals:0, assists:0, cards:0, comment:'(6,2)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,9)'},
-        {points:5, minutes:79, goals:0, assists:0, cards:1, comment:'🟨↪️ (7,0)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:3, minutes:64, goals:0, assists:0, cards:0, comment:'↪️ (6,7)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (Sin grabación)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:5, minutes:31, goals:0, assists:0, cards:0, comment:'↩️ (7,0)'},
-      ]},
-
-    { id:14, name:'Kito', pos:'Centrocampista', status:'OK', special: false, performances:[
-        {points:6, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,3)'},
-        {points:null, minutes:75, goals:0, assists:0, cards:0, comment:'↪️ (Sin grabación)'},
-        {points:7, minutes:70, goals:0, assists:1, cards:1, comment:'🟨↪️🅰️ (7,2+🅰️)'},
-        {points:4, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,8)'},
-        {points:2, minutes:68, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:5, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,0)'},
-        {points:5, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (7,0)'},
-        {points:7, minutes:75, goals:0, assists:0, cards:0, comment:'↪️ (7,4)'},
-        {points:7, minutes:45, goals:0, assists:1, cards:0, comment:'↩️🅰️ (7,2+🅰️)'},
-        {points:15, minutes:45, goals:1, assists:1, cards:0, comment:'↩️⚽🅰️ (8,1+⚽+🅰️)'},
-        {points:3, minutes:33, goals:0, assists:0, cards:0, comment:'↩️ (6,7)'},
-        {points:11, minutes:74, goals:1, assists:0, cards:0, comment:'↪️⚽ (7,6+⚽)'},
-        {points:6, minutes:90, goals:0, assists:1, cards:1, comment:'🟨🅰️ (7,0+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:5, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,0)'},
-        {points:10, minutes:64, goals:1, assists:0, cards:0, comment:'↪️⚽🅿️ (7,5+⚽🅿️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:2, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:0, minutes:45, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,1)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:8, minutes:90, goals:0, assists:0, cards:0, comment:'(7,7)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:11, minutes:90, goals:1, assists:0, cards:0, comment:'⚽🅿️ (7,6+⚽🅿️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-      ]},
-
-    { id:15, name:'Víctor Jaén', pos:'Centrocampista', status:'OK', special: false, performances:[
-        {points:2, minutes:21, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:null, minutes:15, goals:0, assists:0, cards:0, comment:'↩️ (Sin grabación)'},
-        {points:4, minutes:63, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,8)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:4, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,8)'},
-        {points:-3, minutes:90, goals:0, assists:0, cards:0, comment:'(5,1)'},
-        {points:3, minutes:38, goals:0, assists:0, cards:0, comment:'↪️ (6,6)'},
-        {points:-1, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (5,9)'},
-        {points:2, minutes:20, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:3, minutes:10, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:3, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,6)'},
-        {points:2, minutes:16, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:2, minutes:8, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:-1, minutes:11, goals:0, assists:0, cards:0, comment:'↩️ (5,9)'},
-        {points:1, minutes:29, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,3)'},
-        {points:10, minutes:90, goals:1, assists:0, cards:0, comment:'⚽ (7,2+⚽)'},
-        {points:10, minutes:45, goals:1, assists:0, cards:0, comment:'↪️⚽ (7,2+⚽)'},
-        {points:4, minutes:73, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:2, minutes:25, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:2, minutes:10, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:1, minutes:58, goals:0, assists:0, cards:0, comment:'↪️ (6,2)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:4, minutes:63, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:null, minutes:56, goals:0, assists:0, cards:0, comment:'↪️ (Sin grabación)'},
-        {points:4, minutes:60, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,8)'},
-      ]},
-
-    { id:16, name:'Á. Brito', pos:'Centrocampista', status:'OK', special: false, performances:[
-        {points:7, minutes:72, goals:0, assists:0, cards:0, comment:'↪️ (7,5)'},
-        {points:null, minutes:75, goals:0, assists:0, cards:1, comment:'🟨↪️ (Sin grabación)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,1)'},
-        {points:2, minutes:82, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,4)'},
-        {points:7, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (7,5)'},
-        {points:11, minutes:90, goals:0, assists:0, cards:0, comment:'(8,7)'},
-        {points:8, minutes:90, goals:0, assists:0, cards:0, comment:'(7,7)'},
-        {points:-1, minutes:38, goals:0, assists:0, cards:0, comment:'↪️ (5,8)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:4, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,3)'},
-        {points:5, minutes:73, goals:0, assists:0, cards:0, comment:'↪️ (7,0)'},
-        {points:7, minutes:79, goals:0, assists:0, cards:0, comment:'↪️ (7,5)'},
-        {points:9, minutes:90, goals:0, assists:0, cards:0, comment:'(7,8)'},
-        {points:3, minutes:45, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,6)'},
-        {points:11, minutes:90, goals:0, assists:1, cards:1, comment:'🟨🅰️ (8,4+🅰️)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,9)'},
-        {points:12, minutes:90, goals:1, assists:0, cards:1, comment:'🟨⚽🅿️ (7,9+⚽🅿️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:4, minutes:80, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,9)'},
-        {points:7, minutes:70, goals:0, assists:1, cards:1, comment:'🟨↪️🅰️ (7,2+🅰️)'},
-        {points:23, minutes:70, goals:3, assists:2, cards:0, comment:'↪️⚽⚽⚽🅰️🅰️ (10+⚽⚽⚽+🅰️🅰️)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,3)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-      ]},
-
-    { id:17, name:'Pablo', pos:'Centrocampista', status:'Duda', special: false, performances:[
-        {points:4, minutes:69, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:-1, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (5,8)'},
-        {points:11, minutes:70, goals:1, assists:0, cards:0, comment:'↪️⚽ (7,4+⚽)'},
-        {points:4, minutes:80, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,8)'},
-        {points:4, minutes:82, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
-        {points:1, minutes:90, goals:0, assists:0, cards:0, comment:'(6,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:2, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:4, minutes:45, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,9)'},
-        {points:3, minutes:64, goals:0, assists:0, cards:0, comment:'↪️ (6,6)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,6)'},
-        {points:0, minutes:64, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,0)'},
-        {points:null, minutes:45, goals:0, assists:0, cards:1, comment:'🟨↩️ (-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:8, minutes:25, goals:0, assists:1, cards:1, comment:'🟨↩️🅰️ (7,4+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,9)'},
-        {points:-2, minutes:90, goals:0, assists:0, cards:1, comment:'🟨🟥 (6,8+🟥)'},
-      ]},
-
-    { id:18, name:'Javi Pardo', pos:'Centrocampista', status:'OK', special: false, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(Sin grabación)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,3)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,9)'},
-        {points:4, minutes:69, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:9, minutes:28, goals:1, assists:0, cards:0, comment:'↩️⚽ (7,2+⚽)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:2, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:9, minutes:90, goals:1, assists:0, cards:0, comment:'⚽ (7,0+⚽)'},
-        {points:6, minutes:45, goals:0, assists:1, cards:0, comment:'↩️🅰️ (7,1+🅰️)'},
-        {points:1, minutes:74, goals:0, assists:0, cards:0, comment:'↪️ (6,3)'},
-        {points:2, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,5)'},
-        {points:4, minutes:73, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,8)'},
-        {points:0, minutes:64, goals:0, assists:0, cards:0, comment:'↪️ (6,0)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:7, minutes:80, goals:0, assists:1, cards:0, comment:'↪️🅰️ (7,3+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:4, minutes:77, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,7)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(Sin grabación)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:5, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (7,0)'},
-      ]},
-
-    { id:19, name:'Mario', pos:'Centrocampista', status:'OK', special: false, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:6, minutes:22, goals:0, assists:0, cards:0, comment:'↩️ (7,3)'},
-        {points:0, minutes:62, goals:0, assists:0, cards:0, comment:'↪️ (6,0)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,2)'},
-        {points:5, minutes:82, goals:0, assists:0, cards:0, comment:'↪️ (7,1)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,3)'},
-        {points:6, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (7,2)'},
-        {points:3, minutes:8, goals:0, assists:0, cards:0, comment:'↩️ (6,7)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,0)'},
-        {points:3, minutes:16, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:1, minutes:17, goals:0, assists:0, cards:0, comment:'↩️ (6,2)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:0, comment:'(7,1)'},
-        {points:1, minutes:26, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,3)'},
-        {points:-1, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (5,9)'},
-        {points:2, minutes:17, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:11, minutes:65, goals:1, assists:0, cards:0, comment:'↪️⚽ (7,4+⚽)'},
-        {points:0, minutes:26, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,1)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:6, minutes:80, goals:0, assists:0, cards:1, comment:'🟨↪️ (7,2)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,6)'},
-        {points:6, minutes:65, goals:0, assists:0, cards:1, comment:'🟨↪️ (7,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:3, minutes:27, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:null, minutes:34, goals:0, assists:0, cards:0, comment:'↩️ (Sin grabación)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,2)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,9)'},
-      ]},
-
-    { id:20, name:'J. Ogayar', pos:'Centrocampista', status:'OK', special: false, performances:[
-        {points:1, minutes:18, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,3)'},
-        {points:null, minutes:15, goals:0, assists:0, cards:0, comment:'↩️ (Sin grabación)'},
-        {points:2, minutes:27, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,7)'},
-        {points:3, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,6)'},
-        {points:5, minutes:28, goals:0, assists:0, cards:0, comment:'↩️ (7,0)'},
-        {points:8, minutes:61, goals:0, assists:1, cards:0, comment:'↪️🅰️ (7,4+🅰️)'},
-        {points:1, minutes:66, goals:0, assists:0, cards:0, comment:'↪️ (6,2)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,7)'},
-        {points:2, minutes:90, goals:0, assists:0, cards:0, comment:'(6,4)'},
-        {points:4, minutes:82, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:9, minutes:90, goals:1, assists:0, cards:0, comment:'⚽ (7,2+⚽)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,0)'},
-        {points:1, minutes:90, goals:0, assists:0, cards:0, comment:'(6,2)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,6)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:-1, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (5,8)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,7)'},
-        {points:9, minutes:90, goals:0, assists:2, cards:1, comment:'🟨🅰️🅰️ (7,5+🅰️🅰️)'},
-        {points:0, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,1)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:3, minutes:10, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:3, minutes:20, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:5, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (7,0)'},
-        {points:4, minutes:73, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(Sin grabación)'},
-        {points:5, minutes:30, goals:0, assists:0, cards:0, comment:'↩️ (7,0)'},
-        {points:6, minutes:59, goals:0, assists:0, cards:0, comment:'↪️ (7,2)'},
-      ]},
-
-    { id:21, name:'Rodri de Castro', pos:'Atacante', status:'OK', special: false, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:3, minutes:29, goals:0, assists:0, cards:0, comment:'↩️ (6,7)'},
-        {points:2, minutes:24, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:5, minutes:75, goals:0, assists:0, cards:0, comment:'↪️ (7,0)'},
-        {points:3, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,7)'},
-        {points:4, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
-        {points:3, minutes:57, goals:0, assists:0, cards:0, comment:'↪️ (6,7)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:0, minutes:45, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,0)'},
-        {points:1, minutes:61, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:2, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,7)'},
-        {points:4, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
-        {points:3, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,6)'},
-        {points:null, minutes:10, goals:0, assists:0, cards:0, comment:'↩️ (-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:13, minutes:90, goals:1, assists:0, cards:0, comment:'⚽ (7,9+⚽)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,3)'},
-        {points:6, minutes:90, goals:0, assists:0, cards:0, comment:'(7,3)'},
-        {points:12, minutes:90, goals:1, assists:0, cards:0, comment:'⚽ (7,5+⚽)'},
-        {points:4, minutes:80, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(Sin grabación)'},
-        {points:4, minutes:90, goals:0, assists:0, cards:0, comment:'(6,8)'},
-        {points:3, minutes:45, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,7)'},
-      ]},
-
-    { id:22, name:'H. Panizo', pos:'Atacante', status:'Duda', special: false, performances:[
-        {points:4, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,9)'},
-        {points:null, minutes:64, goals:0, assists:0, cards:0, comment:'↪️ (Sin grabación)'},
-        {points:4, minutes:27, goals:0, assists:0, cards:0, comment:'↩️ (6,9)'},
-        {points:2, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,4)'},
-        {points:6, minutes:68, goals:0, assists:0, cards:0, comment:'↪️ (7,2)'},
-        {points:2, minutes:88, goals:0, assists:0, cards:0, comment:'↪️ (6,4)'},
-        {points:6, minutes:52, goals:0, assists:0, cards:0, comment:'↩️ (7,3)'},
-        {points:4, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:2, minutes:8, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:4, minutes:74, goals:0, assists:0, cards:0, comment:'↪️ (6,8)'},
-        {points:9, minutes:82, goals:0, assists:1, cards:0, comment:'↪️🅰️ (7,6+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:0, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (6,0)'},
-        {points:null, minutes:80, goals:0, assists:0, cards:0, comment:'↪️ (-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:3, minutes:73, goals:0, assists:0, cards:0, comment:'↪️ (6,7)'},
-        {points:11, minutes:90, goals:1, assists:0, cards:0, comment:'⚽ (7,6+⚽)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:3, minutes:90, goals:0, assists:0, cards:0, comment:'(6,6)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:4, minutes:49, goals:0, assists:0, cards:0, comment:'↩️ (6,9)'},
-        {points:12, minutes:31, goals:1, assists:0, cards:0, comment:'↩️⚽ (7,8+⚽)'},
-      ]},
-
-    { id:23, name:'Manu Medina', pos:'Atacante', status:'OK', special: false, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:2, minutes:8, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:2, minutes:22, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:2, minutes:8, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:1, minutes:15, goals:0, assists:0, cards:0, comment:'↩️ (6,3)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:1, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:2, minutes:11, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:1, minutes:20, goals:0, assists:0, cards:0, comment:'↩️ (6,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:1, minutes:25, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:1, minutes:10, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,2)'},
-        {points:2, minutes:20, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:2, minutes:13, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:3, minutes:21, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:1, minutes:10, goals:0, assists:0, cards:0, comment:'↩️ (6,2)'},
-        {points:null, minutes:64, goals:1, assists:0, cards:0, comment:'↪️⚽ (Sin grabación)'},
-        {points:3, minutes:60, goals:0, assists:0, cards:0, comment:'↪️ (6,7)'},
-        {points:2, minutes:31, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-      ]},
-
-    { id:24, name:'Manu de V.', pos:'Atacante', status:'OK', special: false, performances:[
-        {points:1, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (6,3)'},
-        {points:null, minutes:26, goals:0, assists:0, cards:1, comment:'🟨↩️ (Sin grabación)'},
-        {points:1, minutes:27, goals:0, assists:0, cards:1, comment:'🟨↩️ (6,3)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:2, minutes:32, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:1, minutes:59, goals:0, assists:0, cards:0, comment:'↪️ (6,2)'},
-        {points:0, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (6,0)'},
-        {points:2, minutes:64, goals:0, assists:0, cards:0, comment:'↪️ (6,4)'},
-        {points:1, minutes:64, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,3)'},
-        {points:4, minutes:58, goals:1, assists:0, cards:0, comment:'🟨🟥↩️⚽ (6,8+🟨🟥+⚽)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:0, minutes:64, goals:0, assists:0, cards:0, comment:'↪️ (6,1)'},
-        {points:null, minutes:45, goals:0, assists:0, cards:0, comment:'↪️ (-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:7, minutes:64, goals:1, assists:0, cards:1, comment:'🟨↪️⚽ (6,9+⚽)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:22, minutes:90, goals:3, assists:1, cards:0, comment:'⚽⚽⚽🅰️ (9,6+⚽⚽⚽+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'-'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:90, goals:0, assists:0, cards:0, comment:'(Sin grabación)'},
-        {points:1, minutes:41, goals:0, assists:0, cards:1, comment:'🟨↪️ (6,2)'},
-        {points:3, minutes:59, goals:0, assists:0, cards:0, comment:'↪️ (6,7)'},
-      ]},
-
-    { id:25, name:'S. Griñán', pos:'Atacante', status:'Lesionado', special: false, performances:[
-        {points:3, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:null, minutes:90, goals:1, assists:0, cards:1, comment:'🟨⚽ (Sin grabación)'},
-        {points:7, minutes:63, goals:1, assists:0, cards:0, comment:'↪️⚽🅿️ (6,8+⚽🅿️)'},
-        {points:0, minutes:45, goals:0, assists:0, cards:0, comment:'↩️ (6,1)'},
-        {points:11, minutes:90, goals:2, assists:0, cards:1, comment:'🟨⚽⚽ (7,0+⚽)'},
-        {points:8, minutes:90, goals:1, assists:0, cards:0, comment:'⚽ (7,1+⚽)'},
-        {points:-1, minutes:90, goals:0, assists:0, cards:0, comment:'(5,8)'},
-        {points:17, minutes:90, goals:2, assists:0, cards:1, comment:'🟨⚽⚽ (8,6+⚽⚽)'},
-        {points:8, minutes:90, goals:1, assists:0, cards:0, comment:'⚽ (7,0+⚽)'},
-        {points:2, minutes:90, goals:0, assists:0, cards:0, comment:'(6,5)'},
-        {points:16, minutes:90, goals:2, assists:0, cards:0, comment:'⚽⚽ (8,2+⚽⚽)'},
-        {points:2, minutes:16, goals:0, assists:0, cards:0, comment:'↩️ (6,4)'},
-        {points:2, minutes:58, goals:0, assists:0, cards:0, comment:'↪️ (6,5)'},
-        {points:9, minutes:31, goals:1, assists:0, cards:0, comment:'↩️⚽ (7,2+⚽)'},
-        {points:2, minutes:29, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:1, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (6,3)'},
-        {points:6, minutes:26, goals:0, assists:1, cards:0, comment:'↩️🅰️ (7,0+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:1, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (6,2)'},
-        {points:null, minutes:90, goals:0, assists:0, cards:1, comment:'🟨 (-)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:6, minutes:26, goals:0, assists:1, cards:1, comment:'🟨↩️🅰️ (7,1+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Sancionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:19, minutes:69, goals:2, assists:1, cards:0, comment:'↪️⚽⚽🅰️ (10+⚽⚽+🅰️)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'No convocado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Lesionado'},
-      ]},
-
-    { id:26, name:'Manu (JB)', pos:'Defensa', status:'OK', special: true, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:3, minutes:29, goals:0, assists:0, cards:0, comment:'↩️ (6,6)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-      ]},
-    { id:27, name:'Adri (JB)', pos:'Defensa', status:'OK', special: true, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:-4, minutes:89, goals:0, assists:0, cards:0, comment:'🟥 (6,4+🟥)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:1, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (6,2)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-      ]},
-      { id:28, name:'M. Danini (JB)', pos:'Atacante', status:'OK', special: true, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:4, minutes:26, goals:0, assists:0, cards:0, comment:'↩️ (6,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JB'},
-      ]},
-      { id:29, name:'Yago (JC)', pos:'Defensa', status:'OK', special: true, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:2, minutes:10, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JC'},
-      ]},
-      { id:30, name:'Gael (JF)', pos:'Atacante', status:'OK', special: true, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:-1, minutes:14, goals:0, assists:0, cards:0, comment:'↩️ (5,9)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-      ]},
-      { id:31, name:'Sergio (JF)', pos:'Defensa', status:'OK', special: true, performances:[
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'Victoria administrativa'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:2, minutes:17, goals:0, assists:0, cards:0, comment:'↩️ (6,5)'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-        {points:null, minutes:0, goals:0, assists:0, cards:0, comment:'En el JF'},
-      ]}
-  ];
+  {
+    "id": 1,
+    "name": "Martín",
+    "pos": "Portero",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 90,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "(Sin calificación)"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Nico",
+    "pos": "Portero",
+    "status": "Lesionado",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 0,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "Lesionado"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "S. Montero",
+    "pos": "Portero",
+    "status": "Lesionado",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 0,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "Lesionado"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "A. Ávila",
+    "pos": "Defensa",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 90,
+        "goals": 0,
+        "assists": 0,
+        "cards": 1,
+        "comment": "🟨"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Pablo García",
+    "pos": "Defensa",
+    "status": "Duda",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 0,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "Lesionado"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Gonzalo O.",
+    "pos": "Defensa",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 90,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "(Sin calificación)"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "H. Revilla",
+    "pos": "Defensa",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 61,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↪️"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "A. Iza",
+    "pos": "Defensa",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 71,
+        "goals": 0,
+        "assists": 0,
+        "cards": 1,
+        "comment": "🟨↪️"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "M. Berruezo",
+    "pos": "Centrocampista",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 19,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↩️"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Ángel",
+    "pos": "Centrocampista",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 75,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↪️"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Nacho J.",
+    "pos": "Centrocampista",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 29,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↩️"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Sergio",
+    "pos": "Centrocampista",
+    "status": "Lesionado",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 0,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "Lesionado"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "R. Calvin",
+    "pos": "Centrocampista",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 29,
+        "goals": 0,
+        "assists": 0,
+        "cards": 1,
+        "comment": "🟨↩️"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Dani Moreno",
+    "pos": "Centrocampista",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 61,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↪️"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "H. Estévez",
+    "pos": "Centrocampista",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 61,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↪️"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "N. Marejil",
+    "pos": "Centrocampista",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 90,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "(Sin calificación)"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Toril",
+    "pos": "Centrocampista",
+    "status": "Lesionado",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 15,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↩️"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Lence",
+    "pos": "Centrocampista",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 29,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↩️"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Gabri Varona",
+    "pos": "Atacante",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 19,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↩️"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Iker",
+    "pos": "Atacante",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 71,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↪️"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Guille G.",
+    "pos": "Atacante",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 0,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "No convocado"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Kike",
+    "pos": "Atacante",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 61,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↪️"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Ares",
+    "pos": "Atacante",
+    "status": "OK",
+    "special": false,
+    "performances": [
+      {
+        "points": null,
+        "minutes": 29,
+        "goals": 0,
+        "assists": 0,
+        "cards": 0,
+        "comment": "↩️"
+      }
+    ]
+  }
+];
   
   // 📰 Noticias del equipo
   const news = [
-    { playerId: null, title: 'Jornada 30', text: "CD Nuevo Boadilla 'D' 2-1 E.F.M.O. Boadilla 'B'", url: 'InformeJ30.html' },
-    { playerId: null, title: 'Jornada 29', text: "E.F.M.O. Boadilla 'B' 0-2 CD Galapagar 'C'", url: 'InformeJ29.html' },
-    { playerId: null, title: 'Jornada 28', text: "E.F.M.O. Boadilla 'B' 1-5 CDE Colegio Juan Pablo II", url: 'InformeJ28.html' },
-    { playerId: 25, title: 'Lesión', text: "Lesión de rodilla, 2-6 semanas" }, //Griñán
-    { playerId: null, title: 'Stats J24', text: "Estadísticas detalladas de la J24", url: 'StatsJ24.html' },
-    { playerId: null, title: 'Jornada 27', text: "UD Las Matas CF 3-0 E.F.M.O. Boadilla 'B'", url: 'InformeJ27.html' },
-    { playerId: null, title: 'Jornada 26', text: "E.F.M.O. Boadilla 'B' 4-1 Escuela Europea CF", url: 'InformeJ26.html' },
-    { playerId: 17, title: 'Duda', text: "Molestias, 4-6 semanas" }, //Pablo
-    { playerId: null, title: 'Jornada 25', text: "CDE Delta Juventud FC 2-6 E.F.M.O. Boadilla 'B'", url: 'InformeJ25.html' },
-    { playerId: 22, title: 'Duda', text: "Esguince de tobillo, 4-8 semanas" }, //Panizo
-    { playerId: null, title: 'Stats J11', text: "Estadísticas detalladas de la J11", url: 'StatsJ11.html' },
-    { playerId: null, title: 'Jornada 24', text: "E.F.M.O. Boadilla 'B' 1-2 EE PP San Fernando Escolapios Pozuelo", url: 'InformeJ24.html' },
-    { playerId: null, title: 'Jornada 23', text: "CDE Aupa - Mentema Boadilla 'A' 1-2 E.F.M.O. Boadilla 'B'", url: 'InformeJ23.html' },
-   // { playerId: 10, title: 'Duda', text: "Corte en la cabeza, 1-2 semanas" }, //Infante
-    { playerId: null, title: 'Stats J10', text: "Estadísticas detalladas de la J10", url: 'StatsJ10.html' },
-    { playerId: null, title: 'Stats J20', text: "Estadísticas detalladas de la J20", url: 'StatsJ20.html' },
-   // { playerId: 6, title: 'Duda', text: "Lesión de isquios, 2-5 semanas" }, //Rafa
-    { playerId: null, title: 'Jornada 22', text: "E.F.M.O. Boadilla 'B' 2-0 CDE Fútbol Club Samba-Las Rozas" },
-    { playerId: null, title: 'Jornada 21', text: "CD Prodet Pozuelo 0-0 E.F.M.O. Boadilla 'B'", url: 'InformeJ21.html' },
-   // { playerId: 11, title: 'Duda', text: "Lesión de rodilla, 3-6 semanas" }, //Molina
-    { playerId: null, title: 'Jornada 20', text: "E.F.M.O. Boadilla 'B' 1-3 CD Retamar", url: 'InformeJ20.html' },
-    { playerId: 8, title: 'Duda', text: "Esguince de tobillo, 4-6 semanas" }, //Rodri
-    { playerId: null, title: 'Jornada 19', text: "CD Puerta de Madrid 'B' 3-2 E.F.M.O. Boadilla 'B'", url: 'InformeJ19.html' },
-    { playerId: null, title: 'Jornada 18', text: "E.F.M.O. Boadilla 'B' 1-2 Gimnástica Colmenarejo CD 'B'", url: 'InformeJ18.html' },
-    { playerId: null, title: 'Stats J17', text: "Estadísticas detalladas de la J17", url: 'StatsJ17.html' },
-    { playerId: null, title: 'Jornada 17', text: "CDE F.B. Dptvo. Torrelodones 5-3 E.F.M.O. Boadilla 'B'", url: 'InformeJ17.html' },
-    { playerId: null, title: 'Jornada 16', text: "E.F.M.O. Boadilla 'B' 1-2 CF Rayo Majadahonda 'B'", url: 'InformeJ16.html' },
-    { playerId: 3, title: 'Duda', text: "Molestias en las rodillas y hombros, 2-3 meses" }, //Álvaro
-   // { playerId: 9, title: 'Duda', text: "Rotura de isquios, 6-8 semanas" }, //Adriano
-    { playerId: null, title: 'Jornada 15', text: "E.F.M.O. Boadilla 'B' 0-0 CD Nuevo Boadilla 'D'", url: 'InformeJ15.html' },
-    { playerId: null, title: 'Stats J14', text: "Estadísticas detalladas de la J14", url: 'StatsJ14.html' },
-    { playerId: 13, title: 'Duda', text: "Fisura en la órbita, 6-8 semanas" }, //Zarcero
-    { playerId: null, title: 'Jornada 14', text: "CD Galapagar 'C' 4-1 E.F.M.O. Boadilla 'B'", url: 'InformeJ14.html' },
-    { playerId: null, title: 'Jornada 13', text: "CDE Colegio Juan Pablo II 4-1 E.F.M.O. Boadilla 'B'", url: 'InformeJ13.html' },
-    { playerId: null, title: 'Stats J8', text: "Estadísticas detalladas de la J8", url: 'StatsJ8.html' },
-    { playerId: null, title: 'Jornada 12', text: "E.F.M.O. Boadilla 'B' 1-6 UD Las Matas CF", url: 'InformeJ12.html' },
-    { playerId: null, title: 'Jornada 11', text: "Escuela Europea CF 3-3 E.F.M.O. Boadilla 'B'", url: 'InformeJ11.html' },
-    { playerId: null, title: 'Jornada 10', text: "E.F.M.O. Boadilla 'B' 1-1 CDE Delta Juventud FC", url: 'InformeJ10.html' },
-    { playerId: null, title: 'Jornada 9', text: "EE PP San Fernando Escolapios Pozuelo 4-2 E.F.M.O. Boadilla 'B'", url: 'InformeJ9.html' },
-    { playerId: null, title: 'Jornada 8', text: "E.F.M.O. Boadilla 'B' 2-2 CDE Aupa - Mentema Boadilla 'A'", url: 'InformeJ8.html' },
-    { playerId: null, title: 'Jornada 7', text: "CDE Fútbol Club Samba-Las Rozas 1-1 E.F.M.O. Boadilla 'B'", url: 'InformeJ7.html' },
-    { playerId: null, title: 'Jornada 6', text: "E.F.M.O. Boadilla 'B' 2-1 CD Prodet Pozuelo", url: 'InformeJ6.html' },
-    { playerId: null, title: 'Jornada 5', text: "CD Retamar 3-2 E.F.M.O. Boadilla 'B'", url: 'InformeJ5.html' },
-    { playerId: null, title: 'Jornada 4', text: "E.F.M.O. Boadilla 'B' 0-1 CD Puerta de Madrid 'B'", url: 'InformeJ4.html' },
-   // { playerId: 8, title: 'Duda', text: "Pubalgia, 7-10 semanas" }, //Rodri
-    { playerId: null, title: 'Jornada 3', text: "Gimnástica Colmenarejo CD 'B' 4-2 E.F.M.O. Boadilla 'B'", url: 'InformeJ3.html' },
-    { playerId: null, title: 'Jornada 2', text: "E.F.M.O. Boadilla 'B' 1-3 CDE F.B. Dptvo. Torrelodones", url: 'InformeJ2.html' },
-    { playerId: null, title: 'Jornada 1', text: "CF Rayo Majadahonda 'B' 1-0 E.F.M.O. Boadilla 'B'", url: 'InformeJ1.html' },
-    { playerId: null, title: 'Lesiones', text: "Para ver las lesiones o dudas, clica en el jugador y verás la información sobre su estado" }
-  ];
+  {
+    "playerId": null,
+    "title": "Jornada 1",
+    "text": "EFMO Boadilla 'B' 0-4 CF Pozuelo de Alarcón 'B'",
+    "url": "InformeJ1.html"
+  },
+  {
+    "playerId": 2,
+    "title": "Lesión",
+    "text": "Esguince de tobillo, 4-6 semanas"
+  },
+  {
+    "playerId": 3,
+    "title": "Lesión",
+    "text": "LCA, 6-8 meses"
+  },
+  {
+    "playerId": 5,
+    "title": "Duda",
+    "text": "Molestias en el isquio, 4-7 días"
+  },
+  {
+    "playerId": 12,
+    "title": "Lesión",
+    "text": "Lesión de isquios, 3-4 semanas"
+  },
+  {
+    "playerId": 17,
+    "title": "Lesión",
+    "text": "Lesión de tobillo, 1-2 semanas"
+  },
+  {
+    "playerId": null,
+    "title": "Lesiones",
+    "text": "Para ver las lesiones o dudas, clica en el jugador y verás la información sobre su estado"
+  }
+];
 
   // Render helpers
   function renderScoreBadge(score, jornada){
@@ -1967,6 +1328,7 @@
   }
 
   function calculateTotals(perfs){
+    if (!perfs || perfs.length === 0) return {points:0, minutes:0, goals:0, assists:0, cards:0};
     return perfs.reduce((acc,p)=>{
       if(p.points!==null) acc.points+=p.points;
       acc.minutes+=p.minutes;
@@ -1978,6 +1340,7 @@
   }
 
   function calculateAvg(perfs){
+    if (!perfs || perfs.length === 0) return 0;
     const valid = perfs.filter(p=>p.points!==null).map(p=>p.points);
     if(valid.length===0) return 0;
     return (valid.reduce((a,b)=>a+b,0)/valid.length).toFixed(2);
@@ -1985,10 +1348,16 @@
 
   function renderInjuryFeed(){
     const feed = document.getElementById('injuryFeed');
+    if (!feed) return;
     feed.innerHTML = '';
 
     // Solo mostrar noticias generales (sin jugador vinculado)
     const generalNews = news.filter(n => n.playerId === null);
+
+    if (generalNews.length === 0) {
+      feed.innerHTML = '<div class="text-xs text-gray-400 p-2 italic">Sin noticias registradas</div>';
+      return;
+    }
 
     generalNews.forEach(n => {
       const div = document.createElement('div');
@@ -2015,7 +1384,7 @@
 
   // Nueva función para renderizar tarjetas individuales
   function renderPlayerCard(p, isSpecial = false) {
-    const lastFive = p.performances.slice(-5);
+    const lastFive = (p.performances || []).slice(-5);
     const totals = calculateTotals(p.performances);
     const avgPoints = calculateAvg(p.performances);
 
@@ -2024,7 +1393,7 @@
 
     // Para jugadores especiales, mostrar solo jornadas donde jugaron
     const recentPerformances = isSpecial ?
-      p.performances.filter(perf => perf.minutes > 0 || perf.points !== null).slice(-5) :
+      (p.performances || []).filter(perf => perf.minutes > 0 || perf.points !== null).slice(-5) :
       lastFive;
 
     card.innerHTML = `
@@ -2047,8 +1416,8 @@
           const jornadaReal = p.performances.length - arr.length + i + 1;
           return renderScoreBadge(l.points, jornadaReal);
           }).join('')}
-          ${recentPerformances.length === 0 && isSpecial ?
-      '<span class="text-xs text-gray-500 italic">No ha jugado aún</span>' : ''}
+          ${recentPerformances.length === 0 ?
+      '<span class="text-xs text-gray-500 italic">Sin partidos</span>' : ''}
         </div>
       </div>
 
@@ -2166,17 +1535,21 @@
     }
 
     // Mostrar actuaciones
-    p.performances.forEach((perf, i) => {
-      const div = document.createElement('div');
-      div.className = 'performance-item';
-      div.innerHTML = `
-          <div class="performance-match">
-            Jornada ${i+1}: ${renderScoreBadge(perf.points)}
-          </div>
-          <div class="performance-comment">${perf.comment}</div>
-        `;
-      perfDiv.appendChild(div);
-    });
+    if (!p.performances || p.performances.length === 0) {
+      perfDiv.innerHTML = '<div class="text-xs text-gray-400 p-2 italic">Sin partidos disputados en esta temporada.</div>';
+    } else {
+      p.performances.forEach((perf, i) => {
+        const div = document.createElement('div');
+        div.className = 'performance-item';
+        div.innerHTML = `
+            <div class="performance-match">
+              Jornada ${i+1}: ${renderScoreBadge(perf.points, i+1)}
+            </div>
+            <div class="performance-comment">${perf.comment}</div>
+          `;
+        perfDiv.appendChild(div);
+      });
+    }
 
     // Mostrar modal
     document.getElementById('statModal').classList.add('active');
