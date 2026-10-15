@@ -830,7 +830,7 @@
                 {
                         "number": "5",
                         "name": "Nacho J.",
-                        "rating": "-",
+                        "rating": "6,3",
                         "goals": 0,
                         "assists": 0,
                         "cards": null
@@ -848,7 +848,7 @@
                 {
                         "number": "19",
                         "name": "Gabri Varona",
-                        "rating": "-",
+                        "rating": "6,6",
                         "goals": 0,
                         "assists": 0,
                         "cards": "🟨"
@@ -1242,6 +1242,7 @@
         const formation = formationsFinal[formationKey] || formationsFinal['3-5-2'];
 
         formation.forEach(rowPlayers => {
+          if (!rowPlayers || rowPlayers.length === 0) return;
           const row = document.createElement('div');
           row.className = 'player-row-responsive';
 
